@@ -98,10 +98,33 @@ jobs:
           gradle.write_text(text, encoding='utf-8')
           PYTHON
 
-      - name: Install packages and compile installable APK
+      - name: Install packages and align sharing plugin Java target
         shell: bash
         run: |
+          set -euo pipefail
           flutter pub get
+          python3 - <<'PYTHON'
+          from pathlib import Path
+          plugin = Path.home() / '.pub-cache' / 'hosted' / 'pub.dev' / 'receive_sharing_intent-1.8.1' / 'android' / 'build.gradle'
+          if not plugin.is_file():
+              raise SystemExit(f'Sharing plugin Android configuration not found: {plugin}')
+          data = plugin.read_text(encoding='utf-8')
+          if 'compileOptions {' not in data:
+              needle = 'android {'
+              if needle not in data:
+                  raise SystemExit('Unexpected receive_sharing_intent Gradle layout')
+              data = data.replace(needle, '''android {
+              compileOptions {
+                  sourceCompatibility JavaVersion.VERSION_17
+                  targetCompatibility JavaVersion.VERSION_17
+              }''', 1)
+              plugin.write_text(data, encoding='utf-8')
+          print('Sharing plugin Java target set to 17 to match Kotlin 17')
+          PYTHON
+
+      - name: Compile installable Android APK
+        shell: bash
+        run: |
           flutter build apk --release --target-platform android-arm64
 
       - name: Upload APK
