@@ -83,6 +83,21 @@ jobs:
           print(f'Offline model size: {model.stat().st_size / 1e6:.1f} MB')
           PY
 
+      - name: Accept Android licenses and install Whisper NDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          SDKMANAGER="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          yes | "$SDKMANAGER" --licenses >/dev/null || true
+          "$SDKMANAGER" --install "ndk;29.0.13113456"
+          python3 - <<'PYTHON'
+          from pathlib import Path
+          gradle = Path('android/app/build.gradle.kts')
+          text = gradle.read_text(encoding='utf-8')
+          text = text.replace('ndkVersion = flutter.ndkVersion', 'ndkVersion = "29.0.13113456"')
+          gradle.write_text(text, encoding='utf-8')
+          PYTHON
+
       - name: Install packages and compile installable APK
         shell: bash
         run: |
