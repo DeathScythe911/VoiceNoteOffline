@@ -2,74 +2,88 @@ VoiceNoteOffline 🎙️
 
 Free WhatsApp Voice Note Transcription — Offline & Online
 
-VoiceNoteOffline is a Flutter-based mobile application designed to convert WhatsApp voice notes and audio recordings into text using OpenAI's open-source Whisper speech recognition models.
+VoiceNoteOffline is a Flutter-based mobile application that converts WhatsApp voice notes and audio recordings into text using Whisper speech recognition models.
 
-The app prioritizes privacy, accessibility, and improved recognition of different English accents, including Trinidadian and Caribbean speech.
+The application focuses on privacy, accessibility, and improved transcription of different English accents, including Trinidadian and Caribbean speech.
 
-Features
+📥 Download VoiceNoteOffline for Android
 
-- Offline transcription: Transcribe recordings privately without an internet connection after installing a Whisper model.
-- Online transcription: Optionally use Groq's cloud-hosted Whisper models through its free API tier.
-- Multiple Whisper models: Choose Tiny, Base, Small, Medium, or Large V3 for offline recognition.
-- High-accuracy online models: Whisper Large V3 Turbo and Large V3.
-- Trinidadian vocabulary hints: Optional context for local expressions and accents.
-- Custom vocabulary: Add names and words to help recognition.
-- WhatsApp audio support: Import shared or saved voice notes.
-- Editable transcripts: Copy, edit, and share transcribed text.
-- No paid transcription subscription required: Offline transcription has no API charges; online free-tier use is subject to limits.
+"⬇️ DOWNLOAD VOICENOTEOFFLINE APK" (https://github.com/DeathScythe911/VoiceNoteOffline/actions/runs/41159281998/artifacts/13025524553)
 
-Transcription Modes
+Version: 1.1.0+2
 
-Mode| Model| Internet
+Platform: Android
+
+Cost: Free
+
+Build Status: Successfully compiled using GitHub Actions
+
+Installation
+
+1. Click the download link above while signed into GitHub.
+2. Download the APK artifact ZIP.
+3. Extract the downloaded file.
+4. Open "app-release.apk".
+5. Follow the Android installation prompts.
+6. Launch VoiceNoteOffline and begin transcribing.
+
+Note: This direct GitHub Actions artifact link expires on November 14, 2026. If the download is unavailable, visit the "GitHub Actions page" (https://github.com/DeathScythe911/VoiceNoteOffline/actions) to find a newer successful Android build.
+
+✨ Features
+
+- 100% offline transcription after installing a Whisper model.
+- Optional online transcription using Groq's free API tier.
+- Multiple offline AI models: Tiny, Base, Small, Medium and Large V3.
+- Online Whisper Large V3 Turbo and Large V3 for higher-capability transcription.
+- Trinidadian English vocabulary hints to assist recognition of local expressions.
+- Custom vocabulary hints for personal names and unfamiliar words.
+- WhatsApp voice-note support through file sharing or importing.
+- Editable transcripts that can be copied and shared.
+- No paid subscription required for offline transcription.
+
+🧠 Transcription Modes
+
+Mode| AI Model| Internet Required
 Offline Fast| Tiny / Base| No
 Offline Balanced| Small| No
 Offline Advanced| Medium / Large V3| No
 Online Fast| Large V3 Turbo| Yes
 Online Advanced| Large V3| Yes
 
-Offline models must be downloaded or imported before they can be used without internet.
+Offline models must first be downloaded or imported. Larger models generally require more RAM, storage and processing power.
 
-Larger models may improve transcription but require more processing power, storage, and memory. Performance varies between devices.
+Groq's online free tier has rate limits and usage restrictions. Unlimited free cloud transcription is not guaranteed.
 
-Installing on Android
+📱 How to Use
 
-1. Visit the "GitHub Actions page" (https://github.com/DeathScythe911/VoiceNoteOffline/actions).
-2. Open a successful Repair project and build Android APK run.
-3. Find the Artifacts section.
-4. Download "VoiceNoteOffline-Android-APK".
-5. Extract the ZIP file.
-6. Install "app-release.apk" on your Android phone.
-
-The Android APK has compiled successfully through GitHub Actions. Actual device functionality should still be tested.
-
-Using Offline Mode
+Offline Mode
 
 1. Open VoiceNoteOffline.
 2. Select Offline.
-3. Choose a Whisper model.
-4. Download or import the model if needed.
-5. Select a WhatsApp voice note or other audio file.
+3. Choose your preferred Whisper model.
+4. Download or import the model if necessary.
+5. Import a WhatsApp voice note.
 6. Choose the spoken language.
-7. Tap Transcribe on this device.
+7. Select Transcribe on this device.
 
-Your audio is processed locally and is not uploaded for offline transcription.
+Your recording remains on your device during offline transcription.
 
-Using Online Mode
+Online Mode
 
-1. Create a free account at "Groq Console" (https://console.groq.com/keys).
-2. Generate an API key.
-3. Select Online in the application.
+1. Visit "Groq Console" (https://console.groq.com/keys).
+2. Create a free account and generate an API key.
+3. Select Online in VoiceNoteOffline.
 4. Choose Whisper Large V3 Turbo or Large V3.
 5. Enter your API key.
 6. Select an audio recording.
-7. Approve the audio upload.
+7. Approve uploading the recording to Groq.
 8. Tap Transcribe online.
 
-Important: Groq's free tier has usage limits and may change. Online transcription requires internet access and uploads the selected audio to Groq. Keep your API key private.
+Your recording is uploaded to Groq for processing when you use online mode.
 
-Trinidadian and Caribbean Speech
+🇹🇹 Trinidadian and Caribbean Speech Recognition
 
-VoiceNoteOffline includes optional Trinidad and Tobago English vocabulary hints to assist Whisper with local expressions.
+VoiceNoteOffline offers optional Trinidad and Tobago English vocabulary hints.
 
 Examples include:
 
@@ -80,11 +94,11 @@ Examples include:
 - Lime
 - Vex
 
-Users can also provide personal names and other vocabulary as transcription hints.
+Users can also enter custom names and expressions.
 
-These features provide additional context to Whisper; they do not guarantee accurate transcription of Trinidadian dialect. Rapid speech, background noise, laughter, and overlapping voices can reduce accuracy.
+These hints provide context to Whisper but do not guarantee accurate recognition of Caribbean dialects. Rapid speech, laughter, overlapping voices and poor audio quality can still cause transcription errors.
 
-Supported Audio
+🎧 Supported Audio Formats
 
 Common supported formats include:
 
@@ -95,35 +109,27 @@ Common supported formats include:
 - FLAC
 - WebM
 
-Supported formats may differ between offline and online processing.
+Format compatibility may vary depending on the selected processing mode.
 
-Privacy
+🔒 Privacy
 
-Offline mode processes voice recordings directly on the device.
+Offline transcription is performed locally on the phone.
 
-Online mode sends the selected recording to Groq only after the user selects online processing and provides upload consent.
+Online processing requires the user to select Online mode, enter an API key and approve uploading the selected audio.
 
-The app does not automatically access WhatsApp conversations. Users must explicitly share or select recordings.
+The application does not automatically access private WhatsApp conversations.
 
-API keys entered for online transcription are held in app memory rather than permanently stored.
+API keys are retained in application memory during the session rather than permanently stored.
 
-iOS Compatibility
+🍎 iOS Compatibility
 
-The Flutter project includes iOS source support and Share Extension starter templates. An iOS version must be compiled and configured using Xcode on macOS.
+The Flutter project includes iOS source support and Share Extension starter templates.
 
-The iOS application has not yet been built and fully tested.
+An iOS application must be compiled using Xcode on macOS. Native iOS building and testing are still pending.
 
 Android APK files cannot be installed on iPhones.
 
-Limitations
-
-Speech recognition accuracy depends on the selected Whisper model, audio quality, accent, and recording conditions.
-
-Large offline models can consume several gigabytes of storage and may not run reliably on devices with insufficient memory.
-
-Online transcription is subject to provider availability, quotas, and supported file formats.
-
-Technologies
+⚙️ Technologies Used
 
 - Flutter and Dart
 - Whisper / whisper.cpp
@@ -131,16 +137,24 @@ Technologies
 - GitHub Actions
 - Android and iOS platform integrations
 
-Project Status
+⚠️ Limitations
 
-Version: 1.1.0+2
+- Transcription accuracy depends on model choice and recording quality.
+- Larger offline models may be slow or exceed available phone RAM.
+- Online transcription requires internet access and is subject to Groq's limits.
+- Supported formats may vary by provider.
+- Successful APK compilation does not guarantee every feature has been tested on a physical device.
 
-Android: APK compiled successfully through GitHub Actions.
+📌 Project Status
 
-iOS: Source available; native build and testing pending.
+Current version: 1.1.0+2
 
-Future improvements: Better Caribbean accent recognition, transcription accuracy benchmarking, and improved handling of laughter and noisy recordings.
+Android: APK successfully built through GitHub Actions.
+
+iOS: Development source available; native build and testing pending.
+
+Future improvements: Better Caribbean dialect recognition, transcription benchmarking, and improved handling of laughter and background noise.
 
 ---
 
-Developed as a free and accessible voice-note transcription solution with an emphasis on privacy and multilingual speech recognition.
+VoiceNoteOffline — Making voice-note transcription more accessible, private and flexible.
